@@ -6,7 +6,7 @@ using UnityEngine;
 public class YeetController : MonoBehaviour
 {
     public Camera mainCamera;
-    public Rigidbody body;
+    public Kid kid;
     public float minDirectionVelocity = 32;
     public float maxDirectionVelocity = 64;
     public float minHeightVelocity = 32;
@@ -35,7 +35,7 @@ public class YeetController : MonoBehaviour
                 var directionVelocity = (maxDirectionVelocity - minDirectionVelocity) * dragScale;
                 var velocity = (minDirectionVelocity + directionVelocity) * dragVector.normalized;
                 velocity.y = minHeightVelocity + (maxHeightVelocity - minHeightVelocity) * dragScale;
-                body.velocity = velocity;
+                kid.spine.velocity = velocity;
                 _isDragging = false;
             }
             else

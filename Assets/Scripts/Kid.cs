@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Kid : MonoBehaviour
 {
-    private void Start()
-    {
-        
-    }
+    public Rigidbody spine;
+    public float maxFallDepth = 8;
 
     private void Update()
     {
-        
+        if (spine.transform.position.y < -maxFallDepth)
+        {
+            print("You lose");
+        }
     }
 }
