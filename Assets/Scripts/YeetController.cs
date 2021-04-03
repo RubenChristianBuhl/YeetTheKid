@@ -1,39 +1,42 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class YeetController : MonoBehaviour
 {
-    public Rigidbody yeetBody;
-    public Vector3 minYeetVelocity = new Vector3(16, 32, 16);
-    public Vector3 maxYeetVelocity = new Vector3(48, 96, 48);
+    public Camera mainCamera;
+    public Rigidbody body;
+    public float minDirectionVelocity = 32;
+    public float maxDirectionVelocity = 64;
+    public float minHeightVelocity = 32;
+    public float maxHeightVelocity = 64;
     public float maxDragRatio = 0.4f;
 
-    private Vector3 dragStartPosition;
-    private bool isDragging = false;
+    private Vector3 _dragStartPosition;
+    private bool _isDragging = false;
 
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            dragStartPosition = Input.mousePosition;
-            isDragging = true;
+            _dragStartPosition = Input.mousePosition;
+            _isDragging = true;
         }
-
-        if (isDragging)
+        else if (_isDragging)
         {
-            var dragVector = dragStartPosition - Input.mousePosition;
             var maxDragVector = maxDragRatio * new Vector2(Screen.width, Screen.height);
-            var dragScale = new Vector3(
-                Mathf.Clamp(dragVector.x / maxDragVector.x, -1, 1),
-                Mathf.Clamp01(dragVector.magnitude / maxDragVector.magnitude),
-                Mathf.Clamp(dragVector.y / maxDragVector.y, -1, 1));
+            var dragVector = _dragStartPosition - Input.mousePosition;
+            var dragScale = Mathf.Clamp01(dragVector.magnitude / maxDragVector.magnitude);
+            dragVector = new Vector3(dragVector.x, 0, dragVector.y);
+            dragVector = Quaternion.Euler(0, mainCamera.transform.eulerAngles.y, 0) * dragVector;
             if (Input.GetMouseButtonUp(0))
             {
-                var dragVelocity = Vector3.Scale(maxYeetVelocity - minYeetVelocity, dragScale);
-                var yeetVelocity = minYeetVelocity + dragVelocity;
-                isDragging = false;
-                yeetBody.velocity = yeetVelocity;
+                var directionVelocity = (maxDirectionVelocity - minDirectionVelocity) * dragScale;
+                var velocity = (minDirectionVelocity + directionVelocity) * dragVector.normalized;
+                velocity.y = minHeightVelocity + (maxHeightVelocity - minHeightVelocity) * dragScale;
+                body.velocity = velocity;
+                _isDragging = false;
             }
             else
             {
