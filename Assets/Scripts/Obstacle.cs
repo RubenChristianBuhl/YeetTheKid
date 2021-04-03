@@ -23,6 +23,5 @@ public class Obstacle : MonoBehaviour
         }
 
         GetComponent<Collider>().enabled = false;
-        GetComponent<Rigidbody>().isKinematic = true;
     }
 }
