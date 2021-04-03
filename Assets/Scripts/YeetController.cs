@@ -30,6 +30,7 @@ public class YeetController : MonoBehaviour
             var dragScale = Mathf.Clamp01(dragVector.magnitude / maxDragVector.magnitude);
             dragVector = new Vector3(dragVector.x, 0, dragVector.y);
             dragVector = Quaternion.Euler(0, mainCamera.transform.eulerAngles.y, 0) * dragVector;
+            Debug.DrawLine(kid.spine.position, kid.spine.position + dragVector, Color.black);
             if (Input.GetMouseButtonUp(0))
             {
                 var directionVelocity = (maxDirectionVelocity - minDirectionVelocity) * dragScale;
