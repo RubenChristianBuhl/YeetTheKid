@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class YeetController : MonoBehaviour
@@ -17,7 +14,7 @@ public class YeetController : MonoBehaviour
     public float maxDragRatio = 0.4f;
 
     private Vector3 _dragStartPosition;
-    private bool _isDragging = false;
+    private bool _isDragging;
 
     private void Update()
     {
