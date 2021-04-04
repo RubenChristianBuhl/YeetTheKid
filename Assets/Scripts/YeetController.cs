@@ -7,6 +7,9 @@ public class YeetController : MonoBehaviour
 {
     public Camera mainCamera;
     public Kid kid;
+    public GameObject arrow;
+    public Renderer arrowRenderer;
+    public float arrowGap = 1;
     public float minDirectionVelocity = 32;
     public float maxDirectionVelocity = 64;
     public float minHeightVelocity = 32;
@@ -30,19 +33,19 @@ public class YeetController : MonoBehaviour
             var dragScale = Mathf.Clamp01(dragVector.magnitude / maxDragVector.magnitude);
             dragVector = new Vector3(dragVector.x, 0, dragVector.y);
             dragVector = Quaternion.Euler(0, mainCamera.transform.eulerAngles.y, 0) * dragVector;
-            Debug.DrawLine(kid.spine.position, kid.spine.position + dragVector, Color.black);
+            var directionVelocity = (maxDirectionVelocity - minDirectionVelocity) * dragScale;
+            var velocity = (minDirectionVelocity + directionVelocity) * dragVector.normalized;
+            velocity.y = minHeightVelocity + (maxHeightVelocity - minHeightVelocity) * dragScale;
             if (Input.GetMouseButtonUp(0))
             {
-                var directionVelocity = (maxDirectionVelocity - minDirectionVelocity) * dragScale;
-                var velocity = (minDirectionVelocity + directionVelocity) * dragVector.normalized;
-                velocity.y = minHeightVelocity + (maxHeightVelocity - minHeightVelocity) * dragScale;
                 kid.spine.velocity = velocity;
                 _isDragging = false;
             }
-            else
-            {
-                
-            }
+
+            arrowRenderer.material.color = new Color(dragScale, dragScale, dragScale);
+            arrow.transform.position = kid.spine.position + velocity.normalized * arrowGap;
+            arrow.transform.rotation = Quaternion.FromToRotation(Vector3.forward, velocity);
+            arrow.SetActive(_isDragging);
         }
     }
 }
