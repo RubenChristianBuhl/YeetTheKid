@@ -72,7 +72,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: 07e9818b965a0bc49b43d8f959e7b053, type: 3}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -943,6 +943,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7693940776864793351}
+  - component: {fileID: 8579056729945260591}
   m_Layer: 0
   m_Name: House1
   m_TagString: Untagged
@@ -965,6 +966,47 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8579056729945260591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7693940776864793348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f3c6083749803f4a9c3117fffbd7de3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ignoredRenderers: []
+  colors:
+  - {fileID: 2100000, guid: f39ddb7dbbe7bdd40a20702913160f67, type: 2}
+  - {fileID: 2100000, guid: 3e2c76994b911844286d3e6afec0206c, type: 2}
+  - {fileID: 2100000, guid: 732eaef78215d614db62764fe7c7a5fa, type: 2}
+  - {fileID: 2100000, guid: 1756bb93039e0e8429aa9872c3ed0af7, type: 2}
+  - {fileID: 2100000, guid: 7c408b0902e5e9c498cb0abf114ea1a5, type: 2}
+  - {fileID: 2100000, guid: ac91adeaa09cfb946b1edcb374e913de, type: 2}
+  - {fileID: 2100000, guid: 1f11ba40db9fa4a49bb0159412b1c55b, type: 2}
+  - {fileID: 2100000, guid: 13b61609e693fdb418082a11fa7cfbbb, type: 2}
+  - {fileID: 2100000, guid: 530a3942d1ae8ce49ac3b4cc42a97af3, type: 2}
+  - {fileID: 2100000, guid: a23b30d18e566524d865389a1eedd660, type: 2}
+  - {fileID: 2100000, guid: 34152d01c6ac46147a4885b67dd0ec1a, type: 2}
+  - {fileID: 2100000, guid: 7b01dc6e76f1c624788b556ff2d346ee, type: 2}
+  - {fileID: 2100000, guid: 79ee03c39644da9468161a047524dab3, type: 2}
+  - {fileID: 2100000, guid: 03cdae2913dfaec4e8a5e49516b2b103, type: 2}
+  - {fileID: 2100000, guid: ad6c1b3da601d2f40871a66b63561dea, type: 2}
+  - {fileID: 2100000, guid: 924af58f2af6f4f439b6056912e21204, type: 2}
+  - {fileID: 2100000, guid: 9628f553053e77c40839ca1751e23399, type: 2}
+  - {fileID: 2100000, guid: cae0362c646e3324283b77393e7eb592, type: 2}
+  - {fileID: 2100000, guid: b163f0ab2af5a60498d75f9219776b15, type: 2}
+  - {fileID: 2100000, guid: 8fb5b43bf4a90134c88ecf24946e55db, type: 2}
+  - {fileID: 2100000, guid: 7a0e08526fc86584ba53fa252bd3513b, type: 2}
+  - {fileID: 2100000, guid: 3913c15fcdac23347a6f8e5a406da95e, type: 2}
+  - {fileID: 2100000, guid: d8f0730137e1c2f4894e551130b0c944, type: 2}
+  - {fileID: 2100000, guid: 1d6bd9a1d1cceef4fab25a74302ddfdc, type: 2}
+  - {fileID: 2100000, guid: 7fd3c89c973539d488448426ce651e40, type: 2}
+  - {fileID: 2100000, guid: 248f2ef4997282f4eabbf698ecf1ab32, type: 2}
+  - {fileID: 2100000, guid: 0d31353a42956b94ab99b43dfdcf028b, type: 2}
 --- !u!1 &8290775906082254740
 GameObject:
   m_ObjectHideFlags: 0
