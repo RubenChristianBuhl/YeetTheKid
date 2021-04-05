@@ -39,7 +39,7 @@ public class YeetController : MonoBehaviour
                 _isDragging = false;
             }
 
-            arrowRenderer.material.color = new Color(dragScale, dragScale, dragScale);
+            arrowRenderer.material.color = new Color(1, 1 - dragScale, 1 - dragScale);
             arrow.transform.position = kid.spine.position + velocity.normalized * arrowGap;
             arrow.transform.rotation = Quaternion.FromToRotation(Vector3.forward, velocity);
             arrow.SetActive(_isDragging);
