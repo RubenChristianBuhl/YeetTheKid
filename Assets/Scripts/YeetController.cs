@@ -13,12 +13,13 @@ public class YeetController : MonoBehaviour
     public float maxHeightVelocity = 64;
     public float maxDragRatio = 0.4f;
 
+    private float maxIdleVelocity = 0.5f;
     private Vector3 _dragStartPosition;
     private bool _isDragging;
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && kid.spine.velocity.magnitude < maxIdleVelocity)
         {
             _dragStartPosition = Input.mousePosition;
             _isDragging = true;
