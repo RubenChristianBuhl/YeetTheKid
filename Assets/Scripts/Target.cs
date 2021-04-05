@@ -1,17 +1,15 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Target : MonoBehaviour
 {
-    public int nextSceneIndex = 0;
+    public int nextSceneIndex;
 
     private void OnCollisionEnter(Collision other)
     {
-        print("OnCollisionEnter");
-        if (other.gameObject.GetComponentsInParent<Kid>() != null)
+        if (GameObject.FindWithTag("Kid").GetComponentsInChildren<Collider>().Contains(other.collider))
         {
-            print(other.gameObject.name);
-            print("You win");
             SceneManager.LoadScene(nextSceneIndex);
         }
     }

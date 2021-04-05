@@ -402,7 +402,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 60358582992372756}
-  m_LocalRotation: {x: 0.34291953, y: 0.27030632, z: -0.10372626, w: 0.89363396}
+  m_LocalRotation: {x: 0.34291953, y: 0.27030635, z: -0.10372628, w: 0.89363396}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -599,7 +599,7 @@ GameObject:
   - component: {fileID: 60358583813584144}
   m_Layer: 0
   m_Name: Kid
-  m_TagString: Untagged
+  m_TagString: Kid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -634,6 +634,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spine: {fileID: 5021293166948838870}
   maxFallDepth: 8
+  fallSceneIndex: 0
 --- !u!1 &60358583859387165
 GameObject:
   m_ObjectHideFlags: 0
@@ -658,7 +659,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 60358583859387165}
-  m_LocalRotation: {x: 0.32660803, y: 0.27214834, z: -0.098792374, w: 0.8997236}
+  m_LocalRotation: {x: 0.32660806, y: 0.2721483, z: -0.09879237, w: 0.8997236}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -732,7 +733,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 60358584071215010}
-  m_LocalRotation: {x: 0.31023198, y: 0.2738958, z: -0.09383896, w: 0.90550065}
+  m_LocalRotation: {x: 0.31023195, y: 0.27389574, z: -0.09383893, w: 0.9055007}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
