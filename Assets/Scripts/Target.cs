@@ -7,8 +7,10 @@ public class Target : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
+        print("OnCollisionEnter");
         if (other.gameObject.GetComponentsInParent<Kid>() != null)
         {
+            print(other.gameObject.name);
             print("You win");
             SceneManager.LoadScene(nextSceneIndex);
         }
