@@ -10,7 +10,10 @@ public class Target : MonoBehaviour
     {
         if (GameObject.FindWithTag("Kid").GetComponentsInChildren<Collider>().Contains(other.collider))
         {
-            SceneManager.LoadScene(nextSceneIndex);
+            EndMenu.NextLevelSceneIndex = nextSceneIndex;
+            EndMenu.Message = "Happy Birthday!\nYou hit the flag!";
+            EndMenu.Retry = false;
+            SceneManager.LoadScene(EndMenu.SceneIndex);
         }
     }
 }
